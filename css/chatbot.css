@@ -1,0 +1,362 @@
+/* AI Contact Terminal Styles */
+.contact-terminal {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 400px;
+    background: var(--bg-surface);
+    backdrop-filter: blur(30px);
+    border: var(--glass-border);
+    border-radius: 12px;
+    box-shadow: var(--glass-shadow);
+    z-index: 1000;
+    font-family: 'JetBrains Mono', monospace;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.contact-terminal.minimized {
+    height: 50px;
+}
+
+.contact-terminal-header {
+    background: rgba(26, 35, 43, 0.9);
+    padding: 12px 15px;
+    border-bottom: var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.terminal-title-small {
+    color: var(--terminal-green);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.terminal-control.minimize {
+    background: var(--terminal-yellow);
+}
+
+.terminal-control.close {
+    background: var(--terminal-red);
+}
+
+.contact-terminal-body {
+    padding: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.terminal-messages {
+    margin-bottom: 15px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.message.ai {
+    background: rgba(0, 255, 136, 0.1);
+    border-left: 3px solid var(--terminal-green);
+    color: var(--text-primary);
+}
+
+.message.user {
+    background: rgba(0, 153, 255, 0.1);
+    border-left: 3px solid var(--terminal-blue);
+    color: var(--text-primary);
+    margin-left: 20px;
+}
+
+.terminal-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.terminal-prompt {
+    color: var(--terminal-green);
+    font-weight: 600;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 6px;
+    padding: 8px 12px;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.terminal-input:focus {
+    border-color: var(--terminal-green);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.send-button {
+    background: var(--terminal-green);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.send-button:hover {
+    background: var(--terminal-cyan);
+    transform: translateY(-1px);
+}
+
+.send-button:disabled {
+    background: var(--text-muted);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.contact-form {
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    color: var(--terminal-cyan);
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 6px;
+    padding: 10px 12px;
+    color: var(--text-primary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--terminal-green);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.submit-button {
+    width: 100%;
+    background: var(--terminal-green);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.submit-button:hover {
+    background: var(--terminal-cyan);
+    transform: translateY(-1px);
+}
+
+.success-message {
+    color: var(--terminal-green);
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.error-message {
+    color: var(--terminal-red);
+    text-align: center;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* Responsive design for terminal */
+@media (max-width: 768px) {
+    .contact-terminal {
+        width: 350px;
+        right: 10px;
+        bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-terminal {
+        width: calc(100% - 20px);
+        right: 10px;
+        left: 10px;
+    }
+}
+
+.typing {
+    color: var(--terminal-cyan);
+    font-style: italic;
+    animation: typingPulse 1.5s infinite;
+}
+
+@keyframes typingPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* Better message formatting */
+.message.ai {
+    white-space: pre-line;
+    line-height: 1.5;
+}
+
+/* Responsive improvements */
+@media (max-width: 480px) {
+    .contact-terminal {
+        width: calc(100vw - 40px);
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+    }
+    
+    .terminal-input-container {
+        flex-wrap: wrap;
+    }
+    
+    .terminal-input {
+        min-width: 200px;
+    }
+}
+
+/* Smooth transitions */
+.contact-terminal {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-terminal-body {
+    transition: max-height 0.3s ease;
+}
+.typing {
+    color: var(--terminal-cyan);
+    font-style: italic;
+    animation: typingPulse 1.5s infinite;
+    opacity: 0.8;
+}
+
+@keyframes typingPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+.message.ai {
+    white-space: pre-line;
+    line-height: 1.5;
+}
+
+.message.user {
+    margin-left: 10px;
+}
+
+/* Smooth transitions for form */
+.contact-form {
+    transition: all 0.3s ease-in-out;
+}
+
+.terminal-input-container {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Better scrollbar for terminal */
+.contact-terminal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.contact-terminal-body::-webkit-scrollbar-track {
+    background: rgba(0, 255, 136, 0.1);
+    border-radius: 3px;
+}
+
+.contact-terminal-body::-webkit-scrollbar-thumb {
+    background: var(--terminal-green);
+    border-radius: 3px;
+}
+
+/* Responsive improvements */
+@media (max-width: 480px) {
+    .contact-terminal {
+        width: calc(100vw - 40px);
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+    }
+    
+    .terminal-input-container {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .terminal-input {
+        min-width: 100%;
+        order: 1;
+    }
+    
+    .send-button {
+        order: 2;
+        flex: 1;
+    }
+    
+    .terminal-prompt {
+        order: 0;
+    }
+}
+
+/* Form styling improvements */
+.form-group {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

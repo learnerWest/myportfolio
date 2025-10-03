@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathum Sandaruwan | TechOps Engineer</title>
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.1"></script>
+    
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="glass-background"></div>
+    <div class="matrix-background"></div>
+    <div class="command-lines" id="commandLines"></div>
+    
+    <!-- Main Portfolio Content -->
+    <div class="terminal-container">
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <div class="terminal-buttons">
+                    <div class="terminal-button close"></div>
+                    <div class="terminal-button minimize"></div>
+                    <div class="terminal-button maximize"></div>
+                </div>
+                <div class="terminal-title">pathum@techops-engineer:~/portfolio</div>
+            </div>
+            
+            <div class="terminal-body">
+                <!-- Header Section -->
+                <div class="header-section">
+                    <div class="user-prompt">
+                        <span class="prompt">pathum@techops</span>
+                        <span class="directory">~/portfolio</span>
+                        <span class="command-text">cat about_me.txt</span>
+                    </div>
+                    
+                    <h1 class="name">PATHUM SANDARUWAN</h1>
+                    <h2 class="title">TECHOPS ENGINEER & DEVOPS SPECIALIST</h2>
+                    
+                    <div class="infra-status">
+                        <div class="status-item azure">
+                            <div class="status-icon"><i class="fab fa-microsoft"></i></div>
+                            <div class="status-count">50+</div>
+                            <div class="status-label">Azure Services Managed</div>
+                        </div>
+                        <div class="status-item kubernetes">
+                            <div class="status-icon"><i class="fas fa-ship"></i></div>
+                            <div class="status-count">15+</div>
+                            <div class="status-label">K8s Clusters</div>
+                        </div>
+                        <div class="status-item jenkins">
+                            <div class="status-icon"><i class="fas fa-cogs"></i></div>
+                            <div class="status-count">45+</div>
+                            <div class="status-label">CI/CD Pipelines</div>
+                        </div>
+                        <div class="status-item terraform">
+                            <div class="status-icon"><i class="fas fa-mountain"></i></div>
+                            <div class="status-count">5k+</div>
+                            <div class="status-label">Terraform Lines</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Maharagama, Colombo, Sri Lanka</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>pathumsandruwan.work@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+94 76 965 6772</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <span>linkedin.com/in/pathumsandaruwan</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <span>github.com/pathumsandaruwan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Summary Section -->
+                <div class="content-section" style="animation-delay: 0.2s">
+                    <div class="section-header">
+                        <span class="section-prompt">$</span>
+                        <h3 class="section-title">PROFESSIONAL_SUMMARY</h3>
+                    </div>
+                    <div class="user-prompt">
+                        <span class="prompt">pathum@techops</span>
+                        <span class="directory">~/summary</span>
+                        <span class="command-text">./display_summary.sh</span>
+                    </div>
+                    <p class="content-text">
+                        <span class="highlight">TechOps Engineer</span> with <span class="highlight">2+ years</span> of comprehensive experience in cloud infrastructure (<span class="highlight">Azure, AWS, OCI</span>), CI/CD pipelines, <span class="highlight">Kubernetes</span> orchestration, <span class="highlight">Docker</span> containerization, and automation using <span class="highlight">Jenkins</span>. 
+                        Proficient in <span class="highlight">Oracle DB</span> administration, <span class="highlight">Bash scripting</span>, and performance troubleshooting with a strong focus on reliability, scalability, and DevOps best practices. 
+                        Currently advancing expertise through <span class="highlight">AZ-104</span> and <span class="highlight">OCI Associate</span> certifications.<span class="cursor"></span>
+                    </p>
+                </div>
+
+                <!-- Technical Skills Section -->
+                <div class="content-section" style="animation-delay: 0.4s">
+                    <div class="section-header">
+                        <span class="section-prompt">$</span>
+                        <h3 class="section-title">TECHNICAL_SKILLS</h3>
+                    </div>
+                    <div class="user-prompt">
+                        <span class="prompt">pathum@techops</span>
+                        <span class="directory">~/skills</span>
+                        <span class="command-text">ls -la tech_stack/</span>
+                    </div>
+                    
+                    <div class="ascii-container">
+                        <div class="ascii-art" id="kubernetesAscii"></div>
+                    </div>
+                    
+                    <div class="skills-grid">
+                        <!-- Skills items would be here -->
+                    </div>
+                </div>
+
+                <!-- Professional Experience Section -->
+                <div class="content-section" style="animation-delay: 0.6s">
+                    <div class="section-header">
+                        <span class="section-prompt">$</span>
+                        <h3 class="section-title">PROFESSIONAL_EXPERIENCE</h3>
+                    </div>
+                    <div class="user-prompt">
+                        <span class="prompt">pathum@techops</span>
+                        <span class="directory">~/experience</span>
+                        <span class="command-text">tail -f career.log</span>
+                    </div>
+                    
+                    <div class="experience-timeline">
+                        <!-- Experience items would be here -->
+                    </div>
+                </div>
+
+                <!-- More sections would continue here -->
+
+                <!-- Footer -->
+                <div class="content-section" style="animation-delay: 1.4s">
+                    <div class="user-prompt">
+                        <span class="prompt">pathum@techops</span>
+                        <span class="directory">~/portfolio</span>
+                        <span class="command-text">echo "System operational. Ready to architect your next infrastructure solution."</span>
+                    </div>
+                    <p class="comment"># Infrastructure ready for deployment. Contact me to discuss your next cloud and DevOps project.<span class="cursor"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Contact Terminal -->
+    <div class="contact-terminal" id="contactTerminal">
+        <div class="contact-terminal-header" onclick="Chatbot.toggleTerminal()">
+            <div class="terminal-title-small">ai-contact-bot</div>
+            <div class="terminal-controls">
+                <div class="terminal-control minimize" onclick="event.stopPropagation(); Chatbot.minimizeTerminal()"></div>
+                <div class="terminal-control close" onclick="event.stopPropagation(); Chatbot.closeTerminal()"></div>
+            </div>
+        </div>
+        
+        <div class="contact-terminal-body" id="terminalBody">
+            <div class="terminal-messages" id="terminalMessages">
+                <div class="message ai">
+                    Hello! I'm your AI contact assistant. I can help visitors send you a message.
+                </div>
+                <div class="message ai">
+                    Would you like to send a message to Pathum? (yes/no)
+                </div>
+            </div>
+            
+            <div class="terminal-input-container">
+                <span class="terminal-prompt">$</span>
+                <input type="text" class="terminal-input" id="terminalInput" placeholder="Type your response..." autocomplete="off">
+                <button class="send-button" onclick="Chatbot.processInput()">Send</button>
+            </div>
+
+            <div class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label class="form-label" for="userName">Your Name</label>
+                    <input type="text" class="form-input" id="userName" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="userEmail">Your Email</label>
+                    <input type="email" class="form-input" id="userEmail" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="userPhone">Phone (Optional)</label>
+                    <input type="tel" class="form-input" id="userPhone">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="userMessage">Your Message</label>
+                    <textarea class="form-input form-textarea" id="userMessage" required></textarea>
+                </div>
+                <button class="submit-button" onclick="EmailService.submitContactForm()">Send Message to Pathum</button>
+                <div id="formMessage"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+    <script src="js/email-service.js"></script>
+</body>
+</html>
